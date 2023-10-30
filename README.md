@@ -149,5 +149,3 @@ For different components:
   ```
 
 ---
-
-Remember to frequently check for updates to ensure optimal performance and take advantage of new features. Enjoy your experience with the EWS!
