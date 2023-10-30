@@ -35,7 +35,8 @@ settings = {
 
 - **server_interface.py**:
 Interface functions to communicate with the Emergent Web Server.
-```python    def initialize_server(main_component_path, proxy_JSON):
+```python
+def initialize_server(main_component_path, proxy_JSON):
         """Initializes the EWS prior to its usage."""
         if(not settings["Initialized"]):
             settings["main_component_path"] = main_component_path
