@@ -35,9 +35,9 @@ python3 ./examples/demo.py
 - Ensure the Emergent Web Server is running.
 - Set the IP of the EWS using the settings dictionary in global_vars.py.
 - Use the `initialize_server` function from `server_interface.py` at the beginning of any scripts using this package unless the EWS is already initialized.
-```
+
 
 ### **Additional Resources**:
 - For troubleshooting with EWS, check logs in `emergent_web_server/pal/em.log`.
-- Visit the official [EWS repository](https://github.com/robertovrf/emergent_web_server) for more details.
+- Visit the EWS repository [EWS repository](https://github.com/rishikesh312/emergent_web_server_new) for more details.
 
