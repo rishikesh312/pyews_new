@@ -1,4 +1,4 @@
-## **Table of Contents**
+## **pyEWS: A Python Interface for the Emergent Web Server (EWS)**
 
 1. [Overview](#1-overview)
 2. [Prerequisites](#2-prerequisites)
@@ -7,10 +7,6 @@
 5. [pyEWS Installation Procedure](#5-pyews-installation-procedure)
 6. [pyEWS Utilization](#6-pyews-utilization)
 7. [Troubleshooting & Additional Resources](#7-troubleshooting--additional-resources)
-
----
-
-## **pyEWS: A Python Interface for the Emergent Web Server (EWS)**
 
 ### **1. Overview** <a id="1-overview"></a>
 
