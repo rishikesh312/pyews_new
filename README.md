@@ -15,7 +15,7 @@
 ### **2. Prerequisites** <a id="2-prerequisites"></a>
 
 #### **Docker Configuration**: 
-  - It's imperative to have Docker properly installed and configured on your machine before proceeding with the subsequent steps.
+  - Ensure Docker is installed and configured on your machine.
   - [Docker's Get Started](https://www.docker.com/get-started) provides a comprehensive guide for installation and initial setup.
     
 ### **3. EWS Configuration via Docker** <a id="3-ews-configuration-via-docker"></a>
