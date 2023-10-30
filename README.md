@@ -10,7 +10,7 @@
 
 ### **1. Overview** <a id="1-overview"></a>
 
-`pyEWS` is an advanced Python interface designed to facilitate interaction with the REST API of the Emergent Web Server (EWS). This document serves as a comprehensive guide for setting up and efficiently using the `pyEWS` system.
+Interacts with the REST interface of the Emergent Web Server (projectdana.com) to allow interaction with python code.
 
 ### **2. Prerequisites** <a id="2-prerequisites"></a>
 
