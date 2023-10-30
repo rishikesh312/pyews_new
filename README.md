@@ -98,5 +98,5 @@ pip install dist/pyews-1.0.3-py3-none-any.whl
 
 ### **7. Troubleshooting & Additional Resources** <a id="7-troubleshooting--additional-resources"></a>
 
-- For EWS-related discrepancies, consult the logs located at `emergent_web_server/pal/em.log`.
-- A more granular understanding can be obtained from the [EWS repository](https://github.com/rishikesh312/emergent_web_server_new).
+- Check logs in `emergent_web_server/pal/em.log` for any issues.
+- More information about EWS can be obtained from the [EWS repository](https://github.com/rishikesh312/emergent_web_server_new).
