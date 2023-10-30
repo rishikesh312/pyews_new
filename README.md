@@ -1,4 +1,4 @@
-## **pyEWS: A Python Interface for the Emergent Web Server (EWS)**
+## **pyEWS: Python Interface for the Emergent Web Server (EWS)**
 
 1. [Overview](#1-overview)
 2. [Prerequisites](#2-prerequisites)
