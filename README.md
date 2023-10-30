@@ -1,128 +1,155 @@
-Reference Implementation for EWS System
+---
 
-### Prerequisites
+## EWS (Emergent Web Server) Deployment Guide
 
-- Ensure Docker is installed and set up. [Docker Installation Guide](https://www.docker.com/get-started).
+### Table of Contents
+- [Prerequisites](#prerequisites)
+- [Docker-Based Execution](#docker-based-execution)
+- [Native Installation](#native-installation)
 
 ---
 
-### Docker-Based Execution
+### Prerequisites <a name="prerequisites"></a>
 
-#### 1. **Run EWS Container from Docker Hub**
+Before proceeding, ensure that:
+
+- **Docker** is installed and running on your machine. If not, refer to the [Docker Installation Guide](https://www.docker.com/get-started).
+
+---
+
+### Docker-Based Execution <a name="docker-based-execution"></a>
+
+#### 1. **Deploy the EWS Container**
+
+Pull and run the EWS container from Docker Hub:
 
 ```bash
 docker run --name=ews -p 2011-2012:2011-2012 -d robertovrf/ews:1.0
 ```
 
-#### 2. **Verify EWS Container is Running**
+#### 2. **Check Container Status**
+
+To ensure the EWS container is running:
 
 ```bash
-docker container ls
+docker container ls | grep ews
 ```
 
-#### 3. **Access EWS Container Terminal**
+#### 3. **Interact with the EWS Container**
+
+To access the terminal of the EWS container:
 
 ```bash
 docker exec -it ews bash
 ```
 
-Inside the EWS container:
+Within the EWS container:
 
-#### 4. **Navigate to the Specified Directory**
+#### 4. **Navigate to the Target Directory**
 
 ```bash
 cd emergent_web_server/pal/
 ```
 
-#### 5. **Launch the Interactive Emergent System Tool**
+#### 5. **Start the Interactive Emergent System Tool**
 
 ```bash
 dana -sp ../repository InteractiveEmergentSys.o
 ```
 
-#### 6. **Interacting with EWS**
+#### 6. **Utilize EWS Features**
 
-- Access help: `sys> help`
-- List available configurations: `sys> get_all_configs`
-- Get current configuration: `sys> get_config`
-- Set configuration: `sys> set_config [ID]` (Replace [ID] with the desired configuration ID.)
-- Access the web server: Open a browser and go to http://localhost:2012/.
-- View available server resources: Check `emergent_web_server/repository/htdocs`.
+Here's a list of common commands and instructions for interacting with the EWS:
+
+- **General Commands**:
+  - View help: `sys> help`
+  - List configurations: `sys> get_all_configs`
+  - View current configuration: `sys> get_config`
+  - Update configuration: `sys> set_config [ID]`
+
+- **Web Interface**:
+  - Visit: http://localhost:2012/
+  - Explore available resources: Review `emergent_web_server/repository/htdocs`
 
 #### 7. **Perception and Learning**
 
-- Get performance data: `sys> get_perception`
-- Use learning algorithm: `sys> learn`
+For machine learning enthusiasts:
 
-For the learning algorithm:
+- Retrieve performance data: `sys> get_perception`
+- Initiate learning algorithm: `sys> learn`
 
-- Recommended observation window: 5000ms
-- Recommended exploration threshold: 3
-- Recommended number of rounds: 52
-
-Execute learning algorithm after setting the values.
+  **Parameters**:
+  - Observation window: `5000ms` (recommended)
+  - Exploration threshold: `3` (recommended)
+  - Rounds: `52` (recommended)
 
 ---
 
-### Native Installation (For Users Preferring Local Set Up)
+### Native Installation (For Power Users) <a name="native-installation"></a>
 
-#### 1. **External Dependencies**
+#### 1. **Manage External Dependencies**
 
-- Install Dana Programming Language [Version 251]. [Installation Guide](http://www.projectdana.com/dana/guide/installation).
-- Install Python 3.7 from [Python Downloads](https://www.python.org/downloads/).
-- Install Perl 5 from [Perl Downloads](https://www.perl.org/get.html).
+For a local setup, ensure the following are installed:
 
-#### 2. **Project Structure**
+- **Dana Programming Language** ([Version 251] - [Installation Guide](http://www.projectdana.com/dana/guide/installation))
+- **Python** 3.7 - [Download here](https://www.python.org/downloads/)
+- **Perl** 5 - [Download here](https://www.perl.org/get.html)
 
-- **Docker**: Contains the Dockerfile and associated scripts.
-- **make_scripts**: Scripts required to execute 'make.dn' for compilation.
-- **pal**: Main Dana code for EWS API.
-- **python_scripts**: Python scripts to interact with EWS API.
-- **repository**: Components of the web server.
-- **ws_clients**: HTTP 1.0 client scripts for workload.
+#### 2. **Familiarize with the Project Structure**
 
-#### 3. **Compiling EWS Project**
+Here's an overview of the EWS project directories:
 
-Navigate to `emergent_web_server` folder:
+- **Docker**: Houses the Dockerfile and linked scripts.
+- **make_scripts**: Contains essential scripts for project compilation.
+- **pal**: Core Dana codebase for the EWS API.
+- **python_scripts**: Python helpers to communicate with EWS.
+- **repository**: Web server components.
+- **ws_clients**: Workload scripts compliant with HTTP 1.0.
+
+#### 3. **Compile the EWS Codebase**
+
+To begin, switch to the `emergent_web_server` directory and run:
 
 ```bash
 dana make.dn
 dana make.o
 ```
 
-For Linux/MacOS:
+For Unix-based systems (Linux/MacOS):
 
 ```bash
 dana make.o -l all
 ```
 
-#### 4. **Executing EWS**
+#### 4. **Launch EWS**
 
-For **EmergentSys.o**:
+For different components:
 
-```bash
-cd emergent_web_server/pal/
-dana -sp ../repository EmergentSys.o
-```
+- **Standard Emergent System**:
+  ```bash
+  cd emergent_web_server/pal/
+  dana -sp ../repository EmergentSys.o
+  ```
 
-For **InteractiveEmergentSys.o**:
+- **Interactive Emergent System**:
+  ```bash
+  cd emergent_web_server/pal/
+  dana -sp ../repository InteractiveEmergentSys.o
+  ```
 
-```bash
-cd emergent_web_server/pal/
-dana -sp ../repository InteractiveEmergentSys.o
-```
+- **Clients**:
+  Navigate to `emergent_web_server/ws_clients/` and choose:
 
-For **Clients**:
+  ```bash
+  dana ClientTextPattern.o
+  ```
 
-```bash
-cd emergent_web_server/ws_clients/
-dana ClientTextPattern.o
-```
+  OR
 
-OR
+  ```bash
+  dana ClientImagePattern.o
+  ```
 
-```bash
-dana ClientImagePattern.o
-```
+---
 
-This reference implementation provides a comprehensive step-by-step guide to run and interact with the EWS system using either Docker or a native installation.
+Remember to frequently check for updates to ensure optimal performance and take advantage of new features. Enjoy your experience with the EWS!
