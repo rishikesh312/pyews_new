@@ -92,8 +92,8 @@ pip install dist/pyews-1.0.3-py3-none-any.whl
     ```
 
 - **Operational Guidelines**:
-  - Ensure the continuous operation of EWS.
-  - Make sure to set the IP of the EWS using the settings dictionary found in global_vars.py
+  - Ensure the EWS is Running.
+  - Make sure to set the IP of the EWS using the settings dictionary found in `global_vars.py`
   - Before you run any script that uses the `pyEWS` package, start with the `initialize_server` function from the `server_interface.py` file.
 
 ### **7. Troubleshooting & Additional Resources** <a id="7-troubleshooting--additional-resources"></a>
