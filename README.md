@@ -1,18 +1,30 @@
+## **Table of Contents**
+
+1. [Overview](#1-overview)
+2. [Prerequisites](#2-prerequisites)
+3. [EWS Configuration via Docker](#3-ews-configuration-via-docker)
+4. [Native EWS Installation Procedure](#4-native-ews-installation-procedure)
+5. [pyEWS Installation Procedure](#5-pyews-installation-procedure)
+6. [pyEWS Utilization](#6-pyews-utilization)
+7. [Troubleshooting & Additional Resources](#7-troubleshooting--additional-resources)
+
+---
+
 ## **pyEWS: A Python Interface for the Emergent Web Server (EWS)**
 
-### **1. Overview**
+### **1. Overview** <a id="1-overview"></a>
 
 `pyEWS` is an advanced Python interface designed to facilitate interaction with the REST API of the Emergent Web Server (EWS). This document serves as a comprehensive guide for setting up and efficiently using the `pyEWS` system.
 
-### **2. Prerequisites**: 
+### **2. Prerequisites** <a id="2-prerequisites"></a>
 
 #### **Docker Configuration**: 
   - It's imperative to have Docker properly installed and configured on your machine before proceeding with the subsequent steps.
-  - For those unfamiliar with Docker, refer to the official [Docker Documentation](https://www.docker.com/get-started) for detailed installation instructions.
+  - [Docker's Get Started](https://www.docker.com/get-started) provides a comprehensive guide for installation and initial setup.
+    
+### **3. EWS Configuration via Docker** <a id="3-ews-configuration-via-docker"></a>
 
-### **3. EWS Configuration via Docker**:
-
-To set up the Emergent Web Server using Docker, adhere to the following sequence of commands:
+To set up the Emergent Web Server using Docker, Use the following sequence of commands:
 
 ```bash
 # Initiate the EWS container:
@@ -28,7 +40,7 @@ docker exec -it ews bash
 dana -sp ../repository InteractiveEmergentSys.o
 ```
 
-### **4. Native EWS Installation Procedure**:
+### **4. Native EWS Installation Procedure** <a id="4-native-ews-installation-procedure"></a>
 
 For those opting for a non-containerized approach, the following instructions detail a native installation process:
 
@@ -62,10 +74,8 @@ For those opting for a non-containerized approach, the following instructions de
         ```bash
         dana ClientTextPattern.o
         ```
-        
----
 
-### **5. pyEWS Installation Procedure**:
+### **5. pyEWS Installation Procedure** <a id="5-pyews-installation-procedure"></a>
 
 Install the pre-compiled version of `pyEWS` utilizing pip:
 
@@ -73,7 +83,7 @@ Install the pre-compiled version of `pyEWS` utilizing pip:
 pip install dist/pyews-1.0.3-py3-none-any.whl
 ```
 
-### **6. pyEWS Utilization**:
+### **6. pyEWS Utilization** <a id="6-pyews-utilization"></a>
 
 - **Validity Test**:
   - To ensure a successful installation, execute the provided Python script located in the examples directory:
@@ -89,8 +99,8 @@ pip install dist/pyews-1.0.3-py3-none-any.whl
   - Ensure the continuous operation of EWS.
   - Make sure to set the IP of the EWS using the settings dictionary found in global_vars.py
   - Before you run any script that uses the `pyEWS` package, start with the `initialize_server` function from the `server_interface.py` file.
-  - 
-### **7. Troubleshooting & Additional Resources**:
+
+### **7. Troubleshooting & Additional Resources** <a id="7-troubleshooting--additional-resources"></a>
 
 - For EWS-related discrepancies, consult the logs located at `emergent_web_server/pal/em.log`.
-- A more granular understanding can be obtained from the official [EWS repository](https://github.com/rishikesh312/emergent_web_server_new).
+- A more granular understanding can be obtained from the [EWS repository](https://github.com/rishikesh312/emergent_web_server_new).
