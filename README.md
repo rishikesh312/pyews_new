@@ -1,4 +1,3 @@
----
 
 ## EWS (Emergent Web Server) Deployment Guide
 
@@ -7,7 +6,6 @@
 - [Docker-Based Execution](#docker-based-execution)
 - [Native Installation](#native-installation)
 
----
 
 ### Prerequisites <a name="prerequisites"></a>
 
