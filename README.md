@@ -10,7 +10,7 @@
 
 ### **1. Overview** <a id="1-overview"></a>
 
-Interacts with the REST interface of the Emergent Web Server (projectdana.com) to allow interaction with python code.
+`pyEWS` interacts with the REST interface of the Emergent Web Server (projectdana.com) to allow interaction with python code.
 
 ### **2. Prerequisites** <a id="2-prerequisites"></a>
 
