@@ -26,28 +26,33 @@ pip install dist/pyEWS-<version>.whl
 Holds global configurations for the `pyEWS`.
 ```python
 settings = {
-    "EWS_IP": "localhost",
-    "EWS_PORT": 2012
+    "Initialized": False,
+    "IP": "localhost:2012",  # Set the IP address of the EWS
+    "main_component_path": None,  # Path to the main component
+    "proxy_JSON": None
 }
 ```
 
 - **server_interface.py**:
 Interface functions to communicate with the Emergent Web Server.
-```python
-import requests
-from .global_vars import settings
+```python    def initialize_server(main_component_path, proxy_JSON):
+        """Initializes the EWS prior to its usage."""
+        if(not settings["Initialized"]):
+            settings["main_component_path"] = main_component_path
+            ewsRESTInterface.set_main({"comp":settings["main_component_path"]})
 
-BASE_URL = f"http://{settings['EWS_IP']}:{settings['EWS_PORT']}/api/"
+            settings["proxy_JSON"] = proxy_JSON
+            ewsRESTInterface.add_proxy(settings["proxy_JSON"])
 
-def initialize_server():
-    """Ensures that the EWS is up and running."""
-    response = requests.get(BASE_URL + "initialize")
-    return response.json()
+            settings["Initialized"] = True
+        else:
+            print("Server already initialized")
 ```
 
 **3. Usage**:
 
 - Ensure the Emergent Web Server is running.
+- Set the IP of the EWS using the settings dictionary in global_vars.py.
 - Use the `initialize_server` function from `server_interface.py` at the beginning of any scripts using this package unless the EWS is already initialized.
 
 **4. Sample Script (main.py)**:
@@ -66,7 +71,6 @@ if __name__ == "__main__":
 ```
 
 ### **Additional Resources**:
-
 - A demo Python script showcasing functionality and implementing an epsilon-greedy algorithm is included in the `examples/` directory.
 - For troubleshooting with EWS, check logs in `emergent_web_server/pal/em.log`.
 - Visit the official [EWS repository](https://github.com/robertovrf/emergent_web_server) for more details.
